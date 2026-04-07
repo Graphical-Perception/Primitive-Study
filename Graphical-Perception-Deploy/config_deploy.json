@@ -1,0 +1,990 @@
+{
+    "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v2.0.2/src/parser/StudyConfigSchema.json",
+    "studyMetadata": {
+        "title": "Graphical Perception - Reviewer Demo",
+        "version": "Deploy",
+        "authors": [
+            "Anonymous"
+        ],
+        "date": "2024-12-04",
+        "description": "This interactive demo allows you to experience the experiments from our Graphical Perception study. Each task type is presented once for demonstration purposes.",
+        "organizations": [
+            "Anonymous"
+        ]
+    },
+    "uiConfig": {
+        "contactEmail": "anonymous@example.com",
+        "helpTextPath": "Graphical-Perception-Deploy/assets/help.md",
+        "logoPath": "revisitAssets/revisitLogoSquare.svg",
+        "nextOnEnter": true,
+        "withProgressBar": true,
+        "autoDownloadStudy": false,
+        "sidebar": true
+    },
+    "importedLibraries": [
+        "demographics"
+    ],
+    "components": {
+        "demo-notice": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/demo-notice.md",
+            "response": []
+        },
+        "introduction": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/introduction.md",
+            "response": []
+        },
+        "help": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/help.md",
+            "response": [],
+            "nextButtonText": "Next or Press Enter"
+        },
+        "single-horizontal-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/SinglePosition.tsx",
+            "parameters": {
+                "taskid": "single-h",
+                "test": false,
+                "single-h": "random(0, 100)"
+            },
+            "instruction": "Predict the **position** of the points from the left end (0 ~ 100%).",
+            "response": [
+                {
+                    "id": "single-h",
+                    "prompt": "Position %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "single-vertical-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/SinglePosition.tsx",
+            "parameters": {
+                "taskid": "single-v",
+                "test": false,
+                "single-v": "random(0, 100)"
+            },
+            "instruction": "Predict the **position** of the points from the bottom end (0 ~ 100%).",
+            "response": [
+                {
+                    "id": "single-v",
+                    "prompt": "Position %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "common-horizontal-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/DoublePosition.tsx",
+            "parameters": {
+                "taskid": "common-single-horizontal",
+                "test": false,
+                "common-single-horizontal": "random(0, 100)"
+            },
+            "instruction": "Predict the **relative distance** between points (0 ~ 100%).",
+            "response": [
+                {
+                    "id": "common-single-horizontal",
+                    "prompt": "Relative distance %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "common-vertical-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/DoublePosition.tsx",
+            "parameters": {
+                "taskid": "common-single-vertical",
+                "test": false,
+                "common-single-vertical": "random(0, 100)"
+            },
+            "instruction": "Predict the **relative distance** between points (0 ~ 100%).",
+            "response": [
+                {
+                    "id": "common-single-vertical",
+                    "prompt": "Relative distance %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "unaligned-horizontal-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/DoublePosition.tsx",
+            "parameters": {
+                "taskid": "unaligned-horizontal",
+                "test": false,
+                "unaligned-horizontal": "random(0, 100)"
+            },
+            "instruction": "Predict the **relative distance** between points on unaligned lines (0 ~ 100%).",
+            "response": [
+                {
+                    "id": "unaligned-horizontal",
+                    "prompt": "Relative distance %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "unaligned-vertical-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/DoublePosition.tsx",
+            "parameters": {
+                "taskid": "unaligned-vertical",
+                "test": false,
+                "unaligned-vertical": "random(0, 100)"
+            },
+            "instruction": "Predict the **relative distance** between points on unaligned lines (0 ~ 100%).",
+            "response": [
+                {
+                    "id": "unaligned-vertical",
+                    "prompt": "Relative distance %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "length-horizontal-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/Length.tsx",
+            "parameters": {
+                "taskid": "length-horizontal",
+                "test": false,
+                "length-horizontal": "random(0, 100)"
+            },
+            "instruction": "How **long** is the red line of the total length? (0 ~ 100%)",
+            "response": [
+                {
+                    "id": "length-horizontal",
+                    "prompt": "Length %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "length-vertical-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/Length.tsx",
+            "parameters": {
+                "taskid": "length-vertical",
+                "test": false,
+                "length-vertical": "random(0, 100)"
+            },
+            "instruction": "How **long** is the red line of the total length? (0 ~ 100%)",
+            "response": [
+                {
+                    "id": "length-vertical",
+                    "prompt": "Length %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "tilt-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/Tilt.tsx",
+            "parameters": {
+                "taskid": "tilt-prediction",
+                "test": false,
+                "tilt-prediction": "random(0, 180)"
+            },
+            "instruction": "Predict the **tilt** angle of the line (0\u00b0 ~ 180\u00b0).",
+            "response": [
+                {
+                    "id": "tilt-prediction",
+                    "prompt": "Tilt \u00b0",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 180,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "area-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/Area.tsx",
+            "parameters": {
+                "taskid": "area-comparison",
+                "test": false,
+                "area-comparison": "random(0, 100)"
+            },
+            "instruction": "What percentage of the larger rectangle's **area** does the black rectangle occupy? (0 ~ 100%)",
+            "response": [
+                {
+                    "id": "area-comparison",
+                    "prompt": "Area %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "luminance-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/Color.tsx",
+            "parameters": {
+                "taskid": "luminance-study",
+                "test": false,
+                "luminance-study": "random(0, 100)"
+            },
+            "instruction": "Predict the **luminance** value of the square (0 ~ 100%).",
+            "response": [
+                {
+                    "id": "luminance-study",
+                    "prompt": "Luminance %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "saturation-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/Color.tsx",
+            "parameters": {
+                "taskid": "saturation-study",
+                "test": false,
+                "saturation-study": "random(0, 100)"
+            },
+            "instruction": "Predict the **saturation** value of the square (0 ~ 100%).",
+            "response": [
+                {
+                    "id": "saturation-study",
+                    "prompt": "Saturation %",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 100,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "curvature-accuracy": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Accuracy/Curvature.tsx",
+            "parameters": {
+                "taskid": "curvature-study",
+                "test": false,
+                "curvature-study": "random(0, 180)"
+            },
+            "instruction": "Predict the **curvature** of the arc (0\u00b0 ~ 180\u00b0).",
+            "response": [
+                {
+                    "id": "curvature-study",
+                    "prompt": "Curvature \u00b0",
+                    "required": true,
+                    "type": "numerical",
+                    "min": 0,
+                    "max": 180,
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "hue-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Hue.tsx",
+            "parameters": {
+                "taskid": "hue-pop",
+                "test": false,
+                "hue-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a **blue circle**?",
+            "response": [
+                {
+                    "id": "hue-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "saturation-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Saturation.tsx",
+            "parameters": {
+                "taskid": "saturation-pop",
+                "test": false,
+                "saturation-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a circle with **different saturation**?",
+            "response": [
+                {
+                    "id": "saturation-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "luminance-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Luminance.tsx",
+            "parameters": {
+                "taskid": "luminance-pop",
+                "test": false,
+                "luminance-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a circle with **different luminance**?",
+            "response": [
+                {
+                    "id": "luminance-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "position-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Position.tsx",
+            "parameters": {
+                "taskid": "position-pop",
+                "test": false,
+                "position-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a circle **positioned differently**",
+            "response": [
+                {
+                    "id": "position-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "triangle-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Shape.tsx",
+            "parameters": {
+                "taskid": "triangle-pop",
+                "test": false,
+                "triangle-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a **triangle** among the circles?",
+            "response": [
+                {
+                    "id": "triangle-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "square-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Shape.tsx",
+            "parameters": {
+                "taskid": "square-pop",
+                "test": false,
+                "square-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a **square** among the circles?",
+            "response": [
+                {
+                    "id": "square-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "hexagon-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Shape.tsx",
+            "parameters": {
+                "taskid": "hexagon-pop",
+                "test": false,
+                "hexagon-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a **hexagon** among the circles?",
+            "response": [
+                {
+                    "id": "hexagon-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "tilt-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Tilt.tsx",
+            "parameters": {
+                "taskid": "tilt-pop",
+                "test": false,
+                "tilt-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a line with a **different tilt**?",
+            "response": [
+                {
+                    "id": "tilt-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "length-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Length.tsx",
+            "parameters": {
+                "taskid": "length-pop",
+                "test": false,
+                "length-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a line with a **different length**?",
+            "response": [
+                {
+                    "id": "length-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "area-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Area.tsx",
+            "parameters": {
+                "taskid": "area-pop",
+                "test": false,
+                "area-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see a rectangle with a **different area**?",
+            "response": [
+                {
+                    "id": "area-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "curvature-popout": {
+            "type": "react-component",
+            "path": "Graphical-Perception/assets/Popout/Curvature.tsx",
+            "parameters": {
+                "taskid": "curvature-pop",
+                "test": false,
+                "curvature-pop": "random(boolean)",
+                "time_limit": 5000
+            },
+            "instruction": "Did you see an arc with a **different curvature**?",
+            "response": [
+                {
+                    "id": "curvature-pop",
+                    "prompt": "",
+                    "required": true,
+                    "type": "radio",
+                    "options": [
+                        "Yes",
+                        "No"
+                    ],
+                    "location": "sidebar"
+                }
+            ],
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter"
+        },
+        "acc-position-single-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/acc-position-single.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "acc-position-double-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/acc-position-double.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "acc-length-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/acc-length.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "acc-tilt-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/acc-tilt.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "acc-area-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/acc-area.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "acc-luminance-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/acc-luminance.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "acc-saturation-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/acc-saturation.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "acc-curvature-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/acc-curvature.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "disc-length-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/disc-length.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "disc-tilt-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/disc-tilt.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "disc-area-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/disc-area.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "disc-luminance-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/disc-luminance.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "disc-saturation-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/disc-saturation.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "disc-curvature-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/disc-curvature.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "pop-color-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/pop-color.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "pop-position-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/pop-position.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "pop-shape-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/pop-shape.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "pop-tilt-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/pop-tilt.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "pop-curvature-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/pop-curvature.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "pop-length-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/pop-length.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        },
+        "pop-area-intro": {
+            "type": "markdown",
+            "path": "Graphical-Perception-Deploy/assets/Introduction/pop-area.md",
+            "nextButtonEnableTime": 3000,
+            "nextButtonLocation": "sidebar",
+            "nextButtonText": "Next or Press Enter",
+            "response": []
+        }
+    },
+    "sequence": {
+        "order": "fixed",
+        "components": [
+            "demo-notice",
+            "introduction",
+            "$demographics.co.demographics",
+            "help",
+            {
+                "order": "fixed",
+                "id": "Accuracy",
+                "components": [
+                    "acc-position-single-intro",
+                    {
+                        "order": "fixed",
+                        "id": "position-single",
+                        "components": [
+                            "single-horizontal-accuracy",
+                            "single-vertical-accuracy"
+                        ]
+                    },
+                    "acc-position-double-intro",
+                    {
+                        "order": "fixed",
+                        "id": "position-double",
+                        "components": [
+                            "common-horizontal-accuracy",
+                            "common-vertical-accuracy",
+                            "unaligned-horizontal-accuracy",
+                            "unaligned-vertical-accuracy"
+                        ]
+                    },
+                    "acc-length-intro",
+                    {
+                        "order": "fixed",
+                        "id": "length",
+                        "components": [
+                            "length-horizontal-accuracy",
+                            "length-vertical-accuracy"
+                        ]
+                    },
+                    "acc-tilt-intro",
+                    {
+                        "order": "fixed",
+                        "id": "tilt",
+                        "components": [
+                            "tilt-accuracy"
+                        ]
+                    },
+                    "acc-area-intro",
+                    {
+                        "order": "fixed",
+                        "id": "area",
+                        "components": [
+                            "area-accuracy"
+                        ]
+                    },
+                    "acc-luminance-intro",
+                    {
+                        "order": "fixed",
+                        "id": "luminance",
+                        "components": [
+                            "luminance-accuracy"
+                        ]
+                    },
+                    "acc-saturation-intro",
+                    {
+                        "order": "fixed",
+                        "id": "saturation",
+                        "components": [
+                            "saturation-accuracy"
+                        ]
+                    },
+                    "acc-curvature-intro",
+                    {
+                        "order": "fixed",
+                        "id": "curvature",
+                        "components": [
+                            "curvature-accuracy"
+                        ]
+                    }
+                ]
+            },
+            {
+                "order": "fixed",
+                "id": "Discriminability",
+                "components": [
+                    "disc-length-intro",
+                    {
+                        "order": "fixed",
+                        "id": "length",
+                        "components": []
+                    },
+                    "disc-tilt-intro",
+                    {
+                        "order": "fixed",
+                        "id": "tilt",
+                        "components": []
+                    },
+                    "disc-area-intro",
+                    {
+                        "order": "fixed",
+                        "id": "area",
+                        "components": []
+                    },
+                    "disc-luminance-intro",
+                    {
+                        "order": "fixed",
+                        "id": "luminance",
+                        "components": []
+                    },
+                    "disc-saturation-intro",
+                    {
+                        "order": "fixed",
+                        "id": "saturation",
+                        "components": []
+                    },
+                    "disc-curvature-intro",
+                    {
+                        "order": "fixed",
+                        "id": "curvature",
+                        "components": []
+                    }
+                ]
+            },
+            {
+                "order": "fixed",
+                "id": "Popout",
+                "components": [
+                    "pop-area-intro",
+                    {
+                        "order": "fixed",
+                        "id": "Area",
+                        "components": [
+                            "area-popout"
+                        ]
+                    },
+                    "pop-position-intro",
+                    {
+                        "order": "fixed",
+                        "id": "Position",
+                        "components": [
+                            "position-popout"
+                        ]
+                    },
+                    "pop-curvature-intro",
+                    {
+                        "order": "fixed",
+                        "id": "Curvature",
+                        "components": [
+                            "curvature-popout"
+                        ]
+                    },
+                    "pop-tilt-intro",
+                    {
+                        "order": "fixed",
+                        "id": "Tilt",
+                        "components": [
+                            "tilt-popout"
+                        ]
+                    },
+                    "pop-length-intro",
+                    {
+                        "order": "fixed",
+                        "id": "Length",
+                        "components": [
+                            "length-popout"
+                        ]
+                    },
+                    "pop-color-intro",
+                    {
+                        "order": "fixed",
+                        "id": "Color",
+                        "components": [
+                            "hue-popout",
+                            "saturation-popout",
+                            "luminance-popout"
+                        ]
+                    },
+                    "pop-shape-intro",
+                    {
+                        "order": "fixed",
+                        "id": "Shape",
+                        "components": [
+                            "square-popout",
+                            "triangle-popout",
+                            "hexagon-popout"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
