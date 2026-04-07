@@ -1,0 +1,11 @@
+{
+    "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v2.0.2/src/parser/GlobalConfigSchema.json",
+    "configsList": [
+        "Graphical-Perception-Deploy"
+    ],
+    "configs": {
+        "Graphical-Perception-Deploy": {
+            "path": "Graphical-Perception-Deploy/config_deploy.json"
+        }
+    }
+}
